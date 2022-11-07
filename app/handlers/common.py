@@ -5,7 +5,7 @@ from app.utils.keyboards import get_start_keyboard
 
 
 async def start(message: types.Message):
-    await message.answer('start test commit 2', reply_markup=get_start_keyboard())
+    await message.answer('start test commit 2 3', reply_markup=get_start_keyboard())
 
 
 async def help(message: types.Message):
