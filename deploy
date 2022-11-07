@@ -1,5 +1,18 @@
 #!/bin/bash
 
-echo its work
-echo test commit
-echo test commit2
+# download changes from git
+git pull
+
+# if venv don`t exist - create it
+if ![ -d "/venv" ]; then
+    virtualenv venv
+fi
+
+# install dependencies
+source venv/bin/activate
+pip install -r requirements.txt
+deactivate
+
+systemctl stop bot
+systemctl start bot
+systemctl status bot
